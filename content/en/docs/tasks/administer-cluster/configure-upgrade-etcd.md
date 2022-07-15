@@ -329,6 +329,7 @@ Another example for restoring using etcdctl options:
 ```shell
 ETCDCTL_API=3 etcdctl --data-dir <data-dir-location> snapshot restore snapshotdb
 ```
+note: if etcd deployed as a static pod on cluster installed by kubeadm tool you shall edit hostPath for the volume called etcd-data in /etc/kubernetes/manifests/etcd.yaml to the new path of restored etcd backup.
 
 For more information and examples on restoring a cluster from a snapshot file, see
 [etcd disaster recovery documentation](https://etcd.io/docs/current/op-guide/recovery/#restoring-a-cluster).
